@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cantina Vini Rossi - Tradizione e Passione</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Configurazione colori personalizzati */
+        :root {
+            --color-dark: #161A1D;
+            --color-burgundy: #660708;
+            --color-red: #E5383B;
+            --color-light: #F5F3F4;
+            --color-white: #FFFFFF;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animazioni */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Hero background pattern */
+        .hero-pattern {
+            background-image:
+                radial-gradient(circle at 20% 80%, var(--color-burgundy) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, var(--color-red) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, var(--color-dark) 0%, transparent 50%);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--color-light);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-burgundy);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--color-red);
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <!-- Menu Sticky -->
+    <nav class="fixed top-0 w-full bg-white shadow-lg z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <span class="text-xl font-bold" style="color: var(--color-dark)">Cantina CARBONERA</span>
+                </div>
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link font-medium hover:text-red-600 transition-colors duration-300"
+                        style="color: var(--color-dark)">Home</a>
+                    <a href="#storia" class="nav-link font-medium hover:text-red-600 transition-colors duration-300"
+                        style="color: var(--color-dark)">Storia</a>
+                    <a href="#vini" class="nav-link font-medium hover:text-red-600 transition-colors duration-300"
+                        style="color: var(--color-dark)">I Nostri Vini</a>
+                    <a href="#contatti" class="nav-link font-medium hover:text-red-600 transition-colors duration-300"
+                        style="color: var(--color-dark)">Contatti</a>
+                </div>
+
+                <!-- Menu Mobile Button -->
+                <button class="md:hidden" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-2xl" style="color: var(--color-dark)"></i>
+                </button>
+            </div>
+
+            <!-- Menu Mobile -->
+            <div class="hidden md:hidden pb-4" id="mobile-menu">
+                <a href="#home" class="block py-2 font-medium hover:text-red-600 transition-colors duration-300"
+                    style="color: var(--color-dark)">Home</a>
+                <a href="#storia" class="block py-2 font-medium hover:text-red-600 transition-colors duration-300"
+                    style="color: var(--color-dark)">Storia</a>
+                <a href="#vini" class="block py-2 font-medium hover:text-red-600 transition-colors duration-300"
+                    style="color: var(--color-dark)">I Nostri Vini</a>
+                <a href="#contatti" class="block py-2 font-medium hover:text-red-600 transition-colors duration-300"
+                    style="color: var(--color-dark)">Contatti</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden hero-pattern">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="container mx-auto px-4 relative z-10 text-center text-white animate-fadeInUp">
+            <img src="img/logo.jpg" alt="Logo" class="w-64 mb-6 mx-auto">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">Cantina CARBONERA</h1>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#vini" class="px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105"
+                    style="background-color: var(--color-red); color: var(--color-white)">
+                    Scopri i Nostri Vini
+                </a>
+                <a href="#contatti"
+                    class="px-8 py-3 rounded-full font-semibold border-2 transition-all duration-300 hover:bg-white hover:text-gray-900"
+                    style="border-color: var(--color-white);">
+                    Contattaci
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-white text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Sezione Storia -->
+    <section id="storia" class="py-20" style="background-color: var(--color-light)">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12" style="color: var(--color-dark)">La Nostra
+                Storia</h2>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <p class="text-lg leading-relaxed" style="color: var(--color-dark)">
+                        La cantina carbonera è una piccola azienda agricola a conduzione familiare che sorge alle
+                        pendici
+                        meridionali del Monte Sasso di Cavallasca, nel parco regionale della Spina Verde di Como.
+                    </p>
+                    <p class="text-lg leading-relaxed" style="color: var(--color-dark)">
+                        Affonda le sue radici nella roccia morenica e nella lunga memoria contadina del nostro
+                        territorio.
+                        Oggi propone agli amanti del buon vino una testimonianza vivente di cultura, passione e rispetto
+                        del
+                        territorio.
+                    <p class="text-lg leading-relaxed" style="color: var(--color-dark)">
+                        Venite a trovarci e a conoscere i nostri vini. </p>
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="img/foto1.jpg" alt="Vigneto"
+                        class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+                    <img src="img/foto3.jpeg" alt="Cantina"
+                        class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 mt-8">
+                    <img src="img/foto4.jpeg" alt="Uve"
+                        class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 -mt-8">
+                    <img src="img/foto5.jpeg" alt="Famiglia"
+                        class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <!-- <div class="mt-16">
+                <h3 class="text-2xl font-bold text-center mb-8" style="color: var(--color-dark)">La Nostra Evoluzione
+                </h3>
+                <div class="relative">
+                    <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1"
+                        style="background-color: var(--color-burgundy)"></div>
+
+                    <div class="space-y-12">
+                        <div class="flex items-center">
+                            <div class="w-1/2 text-right pr-8">
+                                <h4 class="font-bold text-xl" style="color: var(--color-red)">1920</h4>
+                                <p style="color: var(--color-dark)">Fondazione della cantina da parte di</p>
+                            </div>
+                            <div class="w-8 h-8 rounded-full border-4"
+                                style="background-color: var(--color-white); border-color: var(--color-burgundy)"></div>
+                            <div class="w-1/2"></div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="w-1/2"></div>
+                            <div class="w-8 h-8 rounded-full border-4"
+                                style="background-color: var(--color-white); border-color: var(--color-burgundy)"></div>
+                            <div class="w-1/2 pl-8">
+                                <h4 class="font-bold text-xl" style="color: var(--color-red)">1955</h4>
+                                <p style="color: var(--color-dark)">Espansione dei vigneti e introduzione di nuove
+                                    varietà</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="w-1/2 text-right pr-8">
+                                <h4 class="font-bold text-xl" style="color: var(--color-red)">1980</h4>
+                                <p style="color: var(--color-dark)">Prima certificazione biologica</p>
+                            </div>
+                            <div class="w-8 h-8 rounded-full border-4"
+                                style="background-color: var(--color-white); border-color: var(--color-burgundy)"></div>
+                            <div class="w-1/2"></div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div class="w-1/2"></div>
+                            <div class="w-8 h-8 rounded-full border-4"
+                                style="background-color: var(--color-white); border-color: var(--color-burgundy)"></div>
+                            <div class="w-1/2 pl-8">
+                                <h4 class="font-bold text-xl" style="color: var(--color-red)">2024</h4>
+                                <p style="color: var(--color-dark)">Riconoscimento internazionale per i nostri vini</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Sezione Vini -->
+    <section id="vini" class="py-20" style="background-color: var(--color-white)">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12" style="color: var(--color-dark)">I Nostri Vini
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Vino 1 -->
+                <div
+                    class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                    <img src="img/CARLETTO2023.jpg" alt="Carletto" class="w-full h-auto max-h-[400px] object-contain">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold " style="color: var(--color-burgundy)">Carletto</h3>
+                        <span class="text-lg font-semibold block mb-4" style="color: var(--color-red)">Rosso igt terre
+                            lariane</span>
+                        <p class="mb-4" style="color: var(--color-dark)">Prodotto da uva corvina in purezza, affinato in
+                            acciaio 24 mesi.
+                            Rosso rubino scarico, gradevole profumo vinoso e floreale.
+                            Al gusto si presenta lievemente sapido, minerale e con note speziate di pepe.
+                            Da servire a temperatura ambiente o leggermente refrigerato, si abbina gradevolmente ad
+                            antipasti, apertivi, salumi e formaggi freschi.
+                        </p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="font-medium" style="color: var(--color-dark)">13° gradi</span>
+                        </div>
+                        <span class="text-xs text-gray-500">Può verificarsi la naturale formazione di deposito sul fondo
+                            della
+                            bottiglia</span>
+                    </div>
+                </div>
+
+                <!-- Vino 2 -->
+                <div
+                    class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                    <img src="img/CASTANELL2023.jpg" alt="Castanell" class="w-full h-auto max-h-[400px] object-contain">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold " style="color: var(--color-burgundy)">Castanell</h3>
+                        <span class="text-lg font-semibold block mb-4" style="color: var(--color-red)">merlot igt terre
+                            lariane
+                        </span>
+                        <p class="mb-4" style="color: var(--color-dark)">Prodotto da uva merlot in purezza, affinato in
+                            barrique 24 mesi.
+                            Rosso rubino intenso con sfumature violacee, intenso profumo di frutti maturi
+                            Al gusto si presenta, deciso, rotondo, di gradevole freschezza e un tannino morbido ma
+                            persistente.
+                            Da servire a temperatura ambiente e abbinato a primi saporiti, secondi a base di carne,
+                            formaggi stagionati
+                        </p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="font-medium" style="color: var(--color-dark)">13° gradi</span>
+                        </div>
+                        <span class="text-xs text-gray-500">Può verificarsi la naturale formazione di deposito sul fondo
+                            della
+                            bottiglia</span>
+                    </div>
+                </div>
+
+                <!-- Vino 3 -->
+                <div
+                    class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                    <img src="img/MERLOT2023.jpg" alt="Merlot" class="w-full h-auto max-h-[400px] object-contain">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold " style="color: var(--color-burgundy)">Merlot</h3>
+                        <span class="text-lg font-semibold block mb-4" style="color: var(--color-red)">merlot igt terre
+                            lariane
+                        </span>
+                        <p class="mb-4" style="color: var(--color-dark)">Prodotto da uva merlot in purezza, affinato in
+                            acciaio 24 mesi.
+                            Rosso rubino intenso con sfumature violacee, intenso profumo floreale e fruttato
+                            Al gusto si presenta, fresco, equilibrato, con un allegra nota erbacea e un tannino fine ed
+                            elegante
+                            Da servire a temperatura ambiente e abbinato a primi saporiti, secondi a base di carne,
+                            formaggi stagionati
+                        </p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="font-medium" style="color: var(--color-dark)">13° gradi</span>
+                        </div>
+                        <span class="text-xs text-gray-500">Può verificarsi la naturale formazione di deposito sul fondo
+                            della
+                            bottiglia</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sezione Contatti -->
+    <section id="contatti" class="py-20" style="background-color: var(--color-light)">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12" style="color: var(--color-dark)">Contatti</h2>
+            <div class="max-w-2xl mx-auto">
+                <!-- Informazioni di Contatto -->
+                <div class="space-y-6">
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <i class="fas fa-map-marker-alt text-2xl" style="color: var(--color-red)"></i>
+                            <div>
+                                <p class="font-semibold" style="color: var(--color-dark)">Indirizzo</p>
+                                <p style="color: var(--color-dark)">Via Carbonera 11
+                                    San Fermo della Battaglia
+                                    (CO) Località Cavallasca</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <i class="fas fa-phone text-2xl" style="color: var(--color-red)"></i>
+                            <div class="space-y-2">
+                                <p class="font-semibold" style="color: var(--color-dark)">Telefono</p>
+                                <p style="color: var(--color-dark)" class="">Fabio - <a href="tel:3442328989">344
+                                        232 89 89</a></p>
+                                <p style="color: var(--color-dark)" class="">Luca - <a href="tel:3318321883">331
+                                        832 18 83</a>
+                                </p>
+                                <p style="color: var(--color-dark)" class="">Giovanni - <a href="tel:3393667193">339 366
+                                        71 93</a></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <i class="fas fa-envelope text-2xl" style="color: var(--color-red)"></i>
+                            <div>
+                                <p class="font-semibold" style="color: var(--color-dark)">Email</p>
+                                <p style="color: var(--color-dark)">info@cantinacarbonera.it</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8" style="background-color: var(--color-dark); color: var(--color-white)">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <span class="text-xl font-bold">Cantina CARBONERA</span>
+                </div>
+                <p class="text-center md:text-right" style="color: var(--color-light)">
+                    © 2025 Cantina carbonera. Tutti i diritti riservati.<br>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('shadow-xl');
+            } else {
+                navbar.classList.remove('shadow-xl');
+            }
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80; // Account for sticky navbar
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contact-form');
+        const successMessage = document.getElementById('success-message');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Simulate form submission
+            setTimeout(() => {
+                successMessage.classList.remove('hidden');
+                contactForm.reset();
+
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.classList.add('hidden');
+                }, 5000);
+            }, 500);
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeInUp');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>
