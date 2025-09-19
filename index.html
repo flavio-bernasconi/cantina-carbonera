@@ -41,10 +41,13 @@
 
         /* Hero background pattern */
         .hero-pattern {
-            background-image:
+            background-image: url('img/uva.jpg');
+            background-size: cover;
+            background-position: center;
+            /* background-image:
                 radial-gradient(circle at 20% 80%, var(--color-burgundy) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, var(--color-red) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, var(--color-dark) 0%, transparent 50%);
+                radial-gradient(circle at 40% 40%, var(--color-dark) 0%, transparent 50%); */
         }
 
         /* Custom scrollbar */
@@ -111,8 +114,8 @@
     <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden hero-pattern">
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <div class="container mx-auto px-4 relative z-10 text-center text-white animate-fadeInUp">
-            <img src="img/logo.jpg" alt="Logo" class="w-64 mb-6 mx-auto">
-            <h1 class="text-5xl md:text-7xl font-bold mb-6">Cantina CARBONERA</h1>
+            <img src="img/logo_colori.jpg" alt="Logo" class="w-84 mb-6 mx-auto">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 hidden">Cantina CARBONERA</h1>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#vini" class="px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105"
                     style="background-color: var(--color-red); color: var(--color-white)">
@@ -236,8 +239,9 @@
                     <img src="img/CARLETTO2023.jpg" alt="Carletto" class="w-full h-auto max-h-[400px] object-contain">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold " style="color: var(--color-burgundy)">Carletto</h3>
-                        <span class="text-lg font-semibold block mb-4" style="color: var(--color-red)">Rosso igt terre
+                        <span class="text-lg font-semibold block" style="color: var(--color-red)">Rosso igt terre
                             lariane</span>
+                        <span class="font-medium mb-4 block text-gray-600">13° gradi</span>
                         <p class="mb-4" style="color: var(--color-dark)">Prodotto da uva corvina in purezza, affinato in
                             acciaio 24 mesi.
                             Rosso rubino scarico, gradevole profumo vinoso e floreale.
@@ -245,9 +249,6 @@
                             Da servire a temperatura ambiente o leggermente refrigerato, si abbina gradevolmente ad
                             antipasti, apertivi, salumi e formaggi freschi.
                         </p>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="font-medium" style="color: var(--color-dark)">13° gradi</span>
-                        </div>
                         <span class="text-xs text-gray-500">Può verificarsi la naturale formazione di deposito sul fondo
                             della
                             bottiglia</span>
@@ -260,9 +261,10 @@
                     <img src="img/CASTANELL2023.jpg" alt="Castanell" class="w-full h-auto max-h-[400px] object-contain">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold " style="color: var(--color-burgundy)">Castanell</h3>
-                        <span class="text-lg font-semibold block mb-4" style="color: var(--color-red)">merlot igt terre
+                        <span class="text-lg font-semibold block" style="color: var(--color-red)">Merlot igt terre
                             lariane
                         </span>
+                        <span class="font-medium mb-4 block text-gray-600">13° gradi</span>
                         <p class="mb-4" style="color: var(--color-dark)">Prodotto da uva merlot in purezza, affinato in
                             barrique 24 mesi.
                             Rosso rubino intenso con sfumature violacee, intenso profumo di frutti maturi
@@ -271,9 +273,6 @@
                             Da servire a temperatura ambiente e abbinato a primi saporiti, secondi a base di carne,
                             formaggi stagionati
                         </p>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="font-medium" style="color: var(--color-dark)">13° gradi</span>
-                        </div>
                         <span class="text-xs text-gray-500">Può verificarsi la naturale formazione di deposito sul fondo
                             della
                             bottiglia</span>
@@ -286,9 +285,10 @@
                     <img src="img/MERLOT2023.jpg" alt="Merlot" class="w-full h-auto max-h-[400px] object-contain">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold " style="color: var(--color-burgundy)">Merlot</h3>
-                        <span class="text-lg font-semibold block mb-4" style="color: var(--color-red)">merlot igt terre
+                        <span class="text-lg font-semibold block" style="color: var(--color-red)">Merlot igt terre
                             lariane
                         </span>
+                        <span class="font-medium mb-4 block text-gray-600">13° gradi</span>
                         <p class="mb-4" style="color: var(--color-dark)">Prodotto da uva merlot in purezza, affinato in
                             acciaio 24 mesi.
                             Rosso rubino intenso con sfumature violacee, intenso profumo floreale e fruttato
@@ -297,9 +297,6 @@
                             Da servire a temperatura ambiente e abbinato a primi saporiti, secondi a base di carne,
                             formaggi stagionati
                         </p>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="font-medium" style="color: var(--color-dark)">13° gradi</span>
-                        </div>
                         <span class="text-xs text-gray-500">Può verificarsi la naturale formazione di deposito sul fondo
                             della
                             bottiglia</span>
@@ -313,39 +310,41 @@
     <section id="contatti" class="py-20" style="background-color: var(--color-light)">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl md:text-5xl font-bold text-center mb-12" style="color: var(--color-dark)">Contatti</h2>
-            <div class="max-w-2xl mx-auto">
-                <!-- Informazioni di Contatto -->
-                <div class="space-y-6">
-                    <div class="space-y-4">
-                        <div class="flex items-center space-x-4">
-                            <i class="fas fa-map-marker-alt text-2xl" style="color: var(--color-red)"></i>
-                            <div>
-                                <p class="font-semibold" style="color: var(--color-dark)">Indirizzo</p>
-                                <p style="color: var(--color-dark)">Via Carbonera 11
-                                    San Fermo della Battaglia
-                                    (CO) Località Cavallasca</p>
+            <div class="flex gap-8 mx-auto max-w-2xl">
+                <div>
+                    <!-- Informazioni di Contatto -->
+                    <div class="space-y-6">
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4">
+                                <i class="fas fa-map-marker-alt text-2xl" style="color: var(--color-red)"></i>
+                                <div>
+                                    <p class="font-semibold" style="color: var(--color-dark)">Indirizzo</p>
+                                    <p style="color: var(--color-dark)">Via Carbonera 11
+                                        San Fermo della Battaglia
+                                        (CO) Località Cavallasca</p>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="flex items-center space-x-4">
-                            <i class="fas fa-phone text-2xl" style="color: var(--color-red)"></i>
-                            <div class="space-y-2">
-                                <p class="font-semibold" style="color: var(--color-dark)">Telefono</p>
-                                <p style="color: var(--color-dark)" class="">Fabio - <a href="tel:3442328989">344
-                                        232 89 89</a></p>
-                                <p style="color: var(--color-dark)" class="">Luca - <a href="tel:3318321883">331
-                                        832 18 83</a>
-                                </p>
-                                <p style="color: var(--color-dark)" class="">Giovanni - <a href="tel:3393667193">339 366
-                                        71 93</a></p>
+                            <div class="flex items-center space-x-4">
+                                <i class="fas fa-phone text-2xl" style="color: var(--color-red)"></i>
+                                <div class="space-y-2">
+                                    <p class="font-semibold" style="color: var(--color-dark)">Telefono</p>
+                                    <p style="color: var(--color-dark)" class="">Fabio - <a href="tel:3442328989">344
+                                            232 89 89</a></p>
+                                    <p style="color: var(--color-dark)" class="">Luca - <a href="tel:3318321883">331
+                                            832 18 83</a>
+                                    </p>
+                                    <p style="color: var(--color-dark)" class="">Giovanni - <a href="tel:3393667193">339
+                                            366
+                                            71 93</a></p>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="flex items-center space-x-4">
-                            <i class="fas fa-envelope text-2xl" style="color: var(--color-red)"></i>
-                            <div>
-                                <p class="font-semibold" style="color: var(--color-dark)">Email</p>
-                                <p style="color: var(--color-dark)">info@cantinacarbonera.it</p>
+                            <div class="flex items-center space-x-4">
+                                <i class="fas fa-envelope text-2xl" style="color: var(--color-red)"></i>
+                                <div>
+                                    <p class="font-semibold" style="color: var(--color-dark)">Email</p>
+                                    <p style="color: var(--color-dark)">info@cantinacarbonera.it</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -359,7 +358,7 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="flex items-center space-x-2 mb-4 md:mb-0">
-                    <span class="text-xl font-bold">Cantina CARBONERA</span>
+                    <img src="img/logo_colori.jpg" alt="Logo" class="w-32 mb-6 mx-auto">
                 </div>
                 <p class="text-center md:text-right" style="color: var(--color-light)">
                     © 2025 Cantina carbonera. Tutti i diritti riservati.<br>
